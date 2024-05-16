@@ -14,6 +14,7 @@ func checkLogStatement(funcName string, block *ast.BlockStmt) bool {
 			if callExpr, ok := exprStmt.X.(*ast.CallExpr); ok {
 				// Check if the called function is a selector (e.g., log.Info)
 				if selExpr, ok := callExpr.Fun.(*ast.SelectorExpr); ok {
+					fmt.Println(callExpr.Args[0].(*ast.BasicLit))
 					if strings.HasPrefix(selExpr.Sel.Name, "Print") {
 						if len(callExpr.Args) > 0 {
 							if basicLit, ok := callExpr.Args[0].(*ast.BasicLit); ok {
@@ -38,7 +39,7 @@ func main() {
 
 	fset := token.NewFileSet()
 
-	node, err := parser.ParseFile(fset, "./test/main.go", nil, parser.AllErrors)
+	node, err := parser.ParseFile(fset, "./test/test.go", nil, parser.AllErrors)
 	if err != nil {
 		fmt.Printf("Failed to parse file: %v\n", err)
 		return
