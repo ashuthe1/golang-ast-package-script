@@ -142,7 +142,7 @@ func processDirectory(dirPath string, hasMissingLog *bool) {
 }
 
 func main() {
-	dirPath := directoryPath
+	dirPath := directoryPath // change this on top
 	hasMissingLog := false
 
 	processDirectory(dirPath, &hasMissingLog)
