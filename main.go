@@ -13,7 +13,7 @@ import (
 
 
 // Change this Path to directory where you want to run this script
-const directoryPath = "./testCase3"
+const directoryPath = "./testCase1"
 
 // regex pattern to match log functions (e.g., log.Error(), log.Info() etc.)
 var logFuncPattern = regexp.MustCompile(`^log\.[A-Za-z]+$`)
