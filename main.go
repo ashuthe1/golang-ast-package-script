@@ -11,6 +11,10 @@ import (
 	"strings"
 )
 
+
+// Change this Path to directory where you want to run this script
+const directoryPath = "./testCase2"
+
 // regex pattern to match log functions (e.g., log.Error(), log.Info() etc.)
 var logFuncPattern = regexp.MustCompile(`^log\.[A-Za-z]+$`)
 // regex pattern to match log functions (e.g., fmt.Print(), fmt.Println() etc.)
@@ -138,7 +142,7 @@ func processDirectory(dirPath string, hasMissingLog *bool) {
 }
 
 func main() {
-	dirPath := "./testCase2"
+	dirPath := directoryPath
 	hasMissingLog := false
 
 	processDirectory(dirPath, &hasMissingLog)
