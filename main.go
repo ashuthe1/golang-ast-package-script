@@ -138,7 +138,7 @@ func processDirectory(dirPath string, hasMissingLog *bool) {
 }
 
 func main() {
-	dirPath := "./src"
+	dirPath := "./testCase2"
 	hasMissingLog := false
 
 	processDirectory(dirPath, &hasMissingLog)

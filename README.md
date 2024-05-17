@@ -1,11 +1,5 @@
-For running the code in root directory run below command
-```go
+## Local Setup
+- Run the following command in root directory and change the directory path in main.go where you want to do analysis
+```
 go run main.go
 ```
-
-Error/Info
-log.Errror(), log.Info()
-
-Regex for matching
-
-Check: Any level of nesting of go files
