@@ -31,11 +31,15 @@ func checkLogStatements(funcName string, block *ast.BlockStmt) bool {
 	}
 
 	if hasLogStatement && !allFollowConvention {
-		fmt.Printf("		\033[33m Function: %s has some log statements not following the convention \033[0m\n", funcName)
+		fmt.Print("			\033[33m") // For Yellow colors
+		fmt.Printf("Function: %s has some log statements not following the convention", funcName)
+		fmt.Print("\033[0m\n") // For colors
 		return false
 	}
 	if hasLogStatement {
-		fmt.Printf("		\033[32m Function: %s is following convention \033[0m\n", funcName)
+		fmt.Print("			\033[32m") // For Green color
+		fmt.Printf("Function: %s is following convention", funcName)
+		fmt.Print("\033[0m\n") // For colors
 	}
 	return true
 }
@@ -140,6 +144,8 @@ func main() {
 	processDirectory(dirPath, &hasMissingLog)
 
 	if !hasMissingLog {
+		fmt.Print("\033[32m") // For Green color
 		fmt.Println("All functions have log statements following the convention.")
+		fmt.Print("\033[0m\n") // For colors
 	}
 }
